@@ -18,13 +18,15 @@ class Calculator(object):
 
         result = 0.0
         if unary:
-            if data[0] == "inverse":
+            if data[0] == "inv":
                 result = 1 / data[1]
-            elif data[0] == "sqroot":
+            elif data[0] == "sqrt":
                 result = m.sqrt(data[1])
             elif data[0] == "log":
                 result = m.log2(data[1])
-            elif data[0] == "log_by_e":
+            elif data[0] == "lg":
+                result = m.log10(data[1])
+            elif data[0] == "ln":
                 result = m.log(data[1], m.e)
             elif data[0] == "exp":
                 result = m.exp(data[1])
@@ -74,6 +76,6 @@ if __name__ == "__main__":
     assert calculator.evaluate("1 divide 2") == 0.5
     assert calculator.evaluate("5 mod 2") == 1
     assert calculator.evaluate("5 div 2") == 2
-    assert calculator.evaluate("sqroot 4") == 2
-    assert calculator.evaluate("sqroot 4a") == "Input operands is not numbers"
+    assert calculator.evaluate("sqrt 4") == 2
+    assert calculator.evaluate("sqrt 4a") == "Input operands is not numbers"
     assert calculator.evaluate("sin 30") == -0.9880316240928618

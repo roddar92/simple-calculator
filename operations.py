@@ -1,31 +1,244 @@
+import math as m
+
+
 class Operation(object):
 
-    def __init__(self):
-        self.name = ""
+    def eval_unary(self, a):
+        return None
+
+    def eval_binary(self, a, b):
+        return None
+
 
 class AdditionOperation(Operation):
-
-    def __init__(self, data):
+    def __init__(self):
+        super().__init__()
         self.name = "plus"
-        self.data = data
-    
-    def eval(a, b)
-        return data[0] + data[2]
-        
+        self.unary = False
+
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return a + b
+
+
 class SubtractOperation(Operation):
-
-    def __init__(self, data):
+    def __init__(self):
+        super().__init__()
         self.name = "minus"
-        self.data = data
-    
-    def eval(a, b)
-        return data[0] - data[2]
-        
-class MultiplicateOperation(Operation):
+        self.unary = False
 
-    def __init__(self, data):
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return a - b
+
+
+class MultiplicateOperation(Operation):
+    def __init__(self):
+        super().__init__()
         self.name = "mult"
-        self.data = data
-    
-    def eval()
-        return data[0] * data[2]
+        self.unary = False
+
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return a * b
+
+
+class DivisionOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "divide"
+        self.unary = False
+
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return a / b
+
+
+class ModOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "mod"
+        self.unary = False
+
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return a % b
+
+
+class DivOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "div"
+        self.unary = False
+
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return a // b
+
+
+class PowOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "pow"
+        self.unary = False
+
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return a ** b
+
+
+class LogarithmByAnyBaseOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "log_by"
+        self.unary = False
+
+    def eval_unary(self, a):
+        return 0
+
+    def eval_binary(self, a, b):
+        return m.log(a, b)
+
+
+class LogarithmBy2Operation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "log"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.log2(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class LogarithmBy10Operation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "log"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.log10(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class LogarithmByEOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "ln"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.log(a, m.e)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class SquaredRootOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "sqrt"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.sqrt(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class InverseRootOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "inv"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return 1 / a
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class SinOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "sin"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.sin(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class CosOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "cos"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.cos(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class TanOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "tan"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.tan(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class CtanOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "ctan"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return 1 / (m.tan(a))
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class AtanOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "atan"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.atan(a)
+
+    def eval_binary(self, a, b):
+        return 0
