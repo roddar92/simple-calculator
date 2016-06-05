@@ -7,6 +7,10 @@ It has unary and binary operations:
 -mod         --- 'mod'
 -div         --- 'div'
 -pow         --- 'pow'
+-log by any  --- 'log_by'
+-log by 2    --- 'log'
+-log by exp  --- 'log_by_e'
+-exponents   --- 'exp'
 -inverse     --- 'inv'
 -sqroot      --- 'sqrt'
 -sin         --- 'sin'
@@ -16,7 +20,6 @@ It has unary and binary operations:
 -asin        --- 'asin'
 -acos        --- 'acos'
 -atan        --- 'atan'
--actan       --- 'actan'
 
 Commands:
 -for unary operation  --- <operation> <arg>
