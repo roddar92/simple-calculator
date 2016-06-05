@@ -4,6 +4,7 @@ It has unary and binary operations:
 -addition    --- 'plus'
 -subtraction --- 'minus'
 -multiply    --- 'mult'
+-division    --- 'divide'
 -mod         --- 'mod'
 -div         --- 'div'
 -pow         --- 'pow'

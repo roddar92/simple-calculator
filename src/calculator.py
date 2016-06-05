@@ -49,6 +49,8 @@ class Calculator(object):
                 result = data[0] - data[2]
             elif data[1] == "mult":
                 result = data[0] * data[2]
+            elif data[1] == "divide":
+                result = data[0] / data[2]
             elif data[1] == "mod":
                 result = data[0] % data[2]
             elif data[1] == "div":
@@ -68,6 +70,10 @@ if __name__ == "__main__":
     calculator = Calculator()
     assert calculator.evaluate("1 plus 2") == 3
     assert calculator.evaluate("1 minus 2") == -1
+    assert calculator.evaluate("3 mult 2") == 6
+    assert calculator.evaluate("1 divide 2") == 0.5
+    assert calculator.evaluate("5 mod 2") == 1
+    assert calculator.evaluate("5 div 2") == 2
     assert calculator.evaluate("sqroot 4") == 2
     assert calculator.evaluate("sqroot 4a") == "Input operands is not numbers"
     assert calculator.evaluate("sin 30") == -0.9880316240928618
