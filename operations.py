@@ -2,6 +2,9 @@ import math as m
 
 
 class Operation(object):
+    def __init__(self):
+        self.name = "unknown"
+        self.unary = False
 
     def eval_unary(self, a):
         return None
@@ -231,6 +234,32 @@ class CtanOperation(Operation):
         return 0
 
 
+class AsinnOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "asin"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.asin(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class AcosOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "acos"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.acos(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
 class AtanOperation(Operation):
     def __init__(self):
         super().__init__()
@@ -239,6 +268,19 @@ class AtanOperation(Operation):
 
     def eval_unary(self, a):
         return m.atan(a)
+
+    def eval_binary(self, a, b):
+        return 0
+
+
+class ExponentOperation(Operation):
+    def __init__(self):
+        super().__init__()
+        self.name = "exp"
+        self.unary = True
+
+    def eval_unary(self, a):
+        return m.exp(a)
 
     def eval_binary(self, a, b):
         return 0

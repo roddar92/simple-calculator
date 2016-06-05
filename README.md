@@ -12,7 +12,7 @@ It has unary and binary operations:
 -log by 2    --- 'log'
 -log by 10   --- 'lg'
 -log by exp  --- 'ln'
--exponents   --- 'exp'
+-exponenta   --- 'exp'
 -inverse     --- 'inv'
 -sqroot      --- 'sqrt'
 -sin         --- 'sin'
@@ -22,6 +22,8 @@ It has unary and binary operations:
 -asin        --- 'asin'
 -acos        --- 'acos'
 -atan        --- 'atan'
+-E           --- 'e'
+-PI          --- 'pi'
 
 Commands:
 -for unary operation  --- <operation> <arg>

@@ -9,8 +9,20 @@ class Calculator(object):
     def operation(data, unary=False):
         try:
             if unary:
+                if data[1].lower() == "e":
+                    data[1] = m.e
+                if data[1].lower() == "pi":
+                    data[1] = m.pi
                 data[1] = float(data[1])
             else:
+                if data[0].lower() == "e":
+                    data[0] = m.e
+                if data[0].lower() == "pi":
+                    data[0] = m.pi
+                if data[2].lower() == "e":
+                    data[2] = m.e
+                if data[2].lower() == "pi":
+                    data[2] = m.pi
                 data[0] = float(data[0])
                 data[2] = float(data[2])
         except ValueError:
@@ -71,6 +83,7 @@ class Calculator(object):
 if __name__ == "__main__":
     calculator = Calculator()
     assert calculator.evaluate("1 plus 2") == 3
+    assert calculator.evaluate("1 plus pi") == 4.141592653589793
     assert calculator.evaluate("1 minus 2") == -1
     assert calculator.evaluate("3 mult 2") == 6
     assert calculator.evaluate("1 divide 2") == 0.5
