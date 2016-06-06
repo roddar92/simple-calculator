@@ -7,10 +7,10 @@ class Operation(object):
         self.unary = False
 
     def eval_unary(self, a):
-        return None
+        return 0
 
     def eval_binary(self, a, b):
-        return None
+        return 0
 
 
 class AdditionOperation(Operation):

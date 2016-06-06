@@ -2,9 +2,14 @@
 
 """ Simple calculator """
 import math as m
+import operations as ops
 
 
 class Calculator(object):
+
+    def __init__(self):
+        self.perations = dict()
+
     @staticmethod
     def operation(data, unary=False):
         try:
