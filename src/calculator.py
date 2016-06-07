@@ -8,28 +8,43 @@ import operations as ops
 class Calculator(object):
 
     def __init__(self):
-        self.perations = dict()
+        """Create dictionary with arithmetic operations"""
+        self.operations = dict()
 
-    @staticmethod
-    def operation(data, unary=False):
+        self.operations["plus"] = ops.AdditionOperation()
+        self.operations["minus"] = ops.SubtractOperation()
+        self.operations["mult"] = ops.MultiplicateOperation()
+        self.operations["divide"] = ops.DivisionOperation()
+        self.operations["mod"] = ops.ModOperation()
+        self.operations["div"] = ops.DivOperation()
+        self.operations["pow"] = ops.PowOperation()
+        self.operations["log_by"] = ops.LogarithmByAnyBaseOperation()
+        self.operations["log"] = ops.LogarithmBy2Operation()
+        self.operations["lg"] = ops.LogarithmBy10Operation()
+        self.operations["ln"] = ops.LogarithmByEOperation()
+        self.operations["exp"] = ops.ExponentOperation()
+        self.operations["inv"] = ops.InverseOperation()
+        self.operations["sqrt"] = ops.SquaredRootOperation()
+        self.operations["sin"] = ops.SinOperation()
+        self.operations["cos"] = ops.CosOperation()
+        self.operations["tan"] = ops.TanOperation()
+        self.operations["ctan"] = ops.CtanOperation()
+        self.operations["asin"] = ops.AsinOperation()
+        self.operations["acos"] = ops.AcosOperation()
+        self.operations["atan"] = ops.AtanOperation()
+
+
+
+    def operation(self, data, unary=False):
         try:
             if unary:
-                if data[1].lower() == "e":
-                    data[1] = m.e
-                if data[1].lower() == "pi":
-                    data[1] = m.pi
-                data[1] = float(data[1])
+                data[1] = m.e if data[1].lower() == "e" else float(data[1])
+                data[1] = m.pi if data[1].lower() == "pi" else float(data[1])
             else:
-                if data[0].lower() == "e":
-                    data[0] = m.e
-                if data[0].lower() == "pi":
-                    data[0] = m.pi
-                if data[2].lower() == "e":
-                    data[2] = m.e
-                if data[2].lower() == "pi":
-                    data[2] = m.pi
-                data[0] = float(data[0])
-                data[2] = float(data[2])
+                data[0] = m.e if data[0].lower() == "e" else float(data[0])
+                data[0] = m.pi if data[0].lower() == "pi" else float(data[0])
+                data[2] = m.e if data[2].lower() == "e" else float(data[2])
+                data[2] = m.pi if data[2].lower() == "pi" else float(data[2])
         except ValueError:
             return "Input operands is not numbers"
 

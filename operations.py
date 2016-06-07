@@ -112,7 +112,7 @@ class SquaredRootOperation(Operation):
         return m.sqrt(a)
 
 
-class InverseRootOperation(Operation):
+class InverseOperation(Operation):
     def __init__(self):
         super().__init__()
         self.unary = True
@@ -157,7 +157,7 @@ class CtanOperation(Operation):
         return 1 / (m.tan(a))
 
 
-class AsinnOperation(Operation):
+class AsinOperation(Operation):
     def __init__(self):
         super().__init__()
         self.unary = True
